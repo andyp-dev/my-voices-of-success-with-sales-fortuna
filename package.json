@@ -13,7 +13,7 @@
     "sass:watch": "sass --watch assets/scss/main.scss:assets/css/style.css",
     "build": "npm run sass:compile",
     "predeploy": "npm run build",
-    "deploy": "npx gh-pages -d assets"
+    "deploy": "npx gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
