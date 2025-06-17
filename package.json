@@ -18,8 +18,10 @@
   "copy-fonts": "npx cpy-cli \"assets/**/*.{woff,woff2,ttf,otf}\" dist --parents",
   "copy-html": "npx cpy-cli index.html dist",
   "prepare-dist": "npm run copy-css && npm run copy-js && npm run copy-images && npm run copy-fonts && npm run copy-html",
+  "clean-dist": "rimraf dist",
   "predeploy": "npm run build",
-  "deploy": "npx gh-pages -d dist"
+  "deploy": "npx gh-pages -d dist",
+  "manual-deploy": "npm run build && git checkout --orphan gh-pages && git --work-tree dist add --all && git --work-tree dist commit -m \"Manual deploy\" && git push origin HEAD:gh-pages --force && git checkout main"
 },
   "keywords": [],
   "author": "",
