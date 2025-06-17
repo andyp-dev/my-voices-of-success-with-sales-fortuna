@@ -1,6 +1,6 @@
 # Sales Fortuna - Customer Reviews Section
 
-[DEMO LINK](https://Opokhvalenko.github.io/my-voices-of-success-with-sales-fortuna.git/)
+[DEMO LINK](https://Opokhvalenko.github.io/my-voices-of-success-with-sales-fortuna/)
 
 This repository contains the frontend development for an interactive "Customer Reviews" section for the Sales Fortuna website. The section features a responsive review carousel with navigation arrows and pagination, developed using modern web standards and methodologies.
 
