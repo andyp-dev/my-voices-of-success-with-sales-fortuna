@@ -16,10 +16,10 @@
     
     "copy-css": "npx cpy-cli \"assets/css/style.css\" dist/assets/css",
     "copy-main-js": "npx cpy-cli \"script.js\" dist",
-    "copy-all-images": "npx cpy-cli \"images/**/*.{png,jpg,jpeg,svg,webp}\" dist/images --parents",
+    "copy-images": "npx cpy-cli \"images/**/*.{png,jpg,jpeg,svg,webp}\" dist/images --parents",
     "copy-html": "npx cpy-cli index.html dist",
 
-    "prepare-dist": "npm run copy-css && npm run copy-main-js && npm run copy-all-images && npm run copy-html",
+    "prepare-dist": "npm run copy-css && npm run copy-main-js && npm run copy-images && npm run copy-html",
     
     "clean-dist": "rimraf dist",
     "predeploy": "npm run build",
@@ -37,7 +37,7 @@
     "eslint-plugin-prettier": "^5.x.x",
     "gh-pages": "^6.1.1",
     "prettier": "^3.x.x",
-    "rimraf": "^6.0.0",
+    "rimraf": "^6.0.1",
     "sass": "^1.x.x"
   }
 }
