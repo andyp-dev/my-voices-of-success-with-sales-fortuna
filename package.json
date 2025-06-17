@@ -14,7 +14,8 @@
     "sass:watch": "sass --watch assets/scss/main.scss:assets/css/style.css",
     "build": "npm run clean-dist && npm run sass:compile && npm run prepare-dist",
     
-    "copy-css": "npx cpy-cli \"assets/css/style.css\" dist/assets/css",
+    "copy-css": "mkdir dist\\assets\\css 2>NUL && copy assets\\css\\style.css dist\\assets\\css\\style.css",
+    
     "copy-main-js": "npx cpy-cli \"script.js\" dist",
     "copy-images": "npx cpy-cli \"images/**/*.{png,jpg,jpeg,svg,webp}\" dist/images --parents",
     "copy-html": "npx cpy-cli index.html dist",
