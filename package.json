@@ -4,25 +4,28 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "homepage": "https://opokhvalenko.github.io/my-voices-of-success-with-sales-fortuna",
   "scripts": {
-  "lint": "eslint --ext .js",
-  "lint:fix": "eslint --ext .js --fix",
-  "format": "prettier --write \"**/*.{js,json,css,scss,html,md}\"",
-  "check-format": "prettier --check \"**/*.{js,json,css,scss,html,md}\"",
-  "sass:compile": "sass assets/scss/main.scss assets/css/style.css",
-  "sass:watch": "sass --watch assets/scss/main.scss:assets/css/style.css",
-  "build": "npm run sass:compile && npm run prepare-dist",
-  "copy-css": "npx cpy-cli \"assets/**/*.css\" dist --parents",
-  "copy-js": "npx cpy-cli \"assets/**/*.js\" dist --parents",
-  "copy-images": "npx cpy-cli \"assets/**/*.{png,jpg,jpeg,svg,webp}\" dist --parents",
-  "copy-fonts": "npx cpy-cli \"assets/**/*.{woff,woff2,ttf,otf}\" dist --parents",
-  "copy-html": "npx cpy-cli index.html dist",
-  "prepare-dist": "npm run copy-css && npm run copy-js && npm run copy-images && npm run copy-fonts && npm run copy-html",
-  "clean-dist": "rimraf dist",
-  "predeploy": "npm run build",
-  "deploy": "npx gh-pages -d dist",
-  "manual-deploy": "npm run build && git checkout --orphan gh-pages && git --work-tree dist add --all && git --work-tree dist commit -m \"Manual deploy\" && git push origin HEAD:gh-pages --force && git checkout main"
-},
+    "lint": "eslint --ext .js",
+    "lint:fix": "eslint --ext .js --fix",
+    "format": "prettier --write \"**/*.{js,json,css,scss,html,md}\"",
+    "check-format": "prettier --check \"**/*.{js,json,css,scss,html,md}\"",
+    "sass:compile": "sass assets/scss/main.scss assets/css/style.css",
+    "sass:watch": "sass --watch assets/scss/main.scss:assets/css/style.css",
+    "build": "npm run clean-dist && npm run sass:compile && npm run prepare-dist",
+    
+    "copy-css": "npx cpy-cli \"assets/css/style.css\" dist/assets/css",
+    "copy-main-js": "npx cpy-cli \"script.js\" dist",
+    "copy-all-images": "npx cpy-cli \"images/**/*.{png,jpg,jpeg,svg,webp}\" dist/images --parents",
+    "copy-html": "npx cpy-cli index.html dist",
+
+    "prepare-dist": "npm run copy-css && npm run copy-main-js && npm run copy-all-images && npm run copy-html",
+    
+    "clean-dist": "rimraf dist",
+    "predeploy": "npm run build",
+    "deploy": "npx gh-pages -d dist",
+    "manual-deploy": "npm run build && git checkout --orphan gh-pages && git --work-tree dist add --all && git --work-tree dist commit -m \"Manual deploy\" && git push origin HEAD:gh-pages --force && git checkout main"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -34,6 +37,7 @@
     "eslint-plugin-prettier": "^5.x.x",
     "gh-pages": "^6.1.1",
     "prettier": "^3.x.x",
+    "rimraf": "^6.0.0",
     "sass": "^1.x.x"
   }
 }
